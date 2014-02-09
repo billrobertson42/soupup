@@ -7,7 +7,7 @@ Also provides convenience functions for Jsoup's parse and select methods.
 
 ## Usage
 
-soupup.core contains four functions for use
+soupup.core contains several functions for use
 
     (parse)    
     accepts html text and returns a JSoup data structures
