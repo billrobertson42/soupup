@@ -57,11 +57,17 @@
     (is (= "js.alert('zomg')" (soupup (single <script> "script"))))
     ))
 
-(deftest document-test
-  (testing "ignore the document element"
+(deftest parse-test
+  (testing "parsing!"
     (is (= :html (first (soupup (Jsoup/parse <p>)))))
     (is (instance? org.jsoup.nodes.Document (parse <p>)))
     (is (= :html (first (parsup <p>))))
+    ))
+
+(deftest frag-test
+  (testing "fragments!"
+    (is (= :p (first (soupup (frag <p>)))))
+    (is (= :p (first (fragup <p>))))
     ))
 
 (deftest select-test
@@ -69,3 +75,4 @@
     (is (instance? org.jsoup.select.Elements (select (parse <p>) "p")))
     (is (= :p (-> (selectup (parse <p>) "p") first first)))
     ))
+

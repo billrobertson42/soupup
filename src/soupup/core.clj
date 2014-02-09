@@ -64,11 +64,11 @@
       (map soupup children))))
 
 (defn parse [^String html-text]
-  "Shorcut for Jsoup/parse -> produses a Jsoup document"
+  "Shortcut for Jsoup/parse, returns a Jsoup document"
   (Jsoup/parse html-text))
 
 (defn parsup [^String html-text]
-  "parse and convert"
+  "parse and convert to a hiccup data structure"
   (soupup (parse html-text)))
 
 (defn select [^Node node ^String css-selector]
@@ -78,3 +78,12 @@
 (defn selectup [^Node node ^String css-selector]
   "Call select and convert, returns a lazy seq"
   (soupup (select node css-selector)))
+
+(defn frag [^String html-frag-text]
+  "Shortcut for parsing an html fragment, returns a Jsoup Element"
+  (let [^Document doc (Jsoup/parseBodyFragment html-frag-text)]
+    (-> doc .body (.childNode 0))))
+
+(defn fragup [^String html-frag-text]
+  "Shortcut for parsing an html fragment, returns a Hiccup data structure"
+  (soupup (frag html-frag-text)))
