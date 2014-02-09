@@ -3,7 +3,8 @@
 A Clojure library designed to utilize [JSoup] (http://jsoup.org) to
 produce [Hiccup] (https://github.com/weavejester/hiccup) data structures.
 
-Also provides convenience functions for Jsoup's parse and select methods.
+Also provides convenience functions for Jsoup's parse (full document
+and fragment) and select methods.
 
 ## Usage
 
