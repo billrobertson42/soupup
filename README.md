@@ -14,7 +14,7 @@ soupup.core contains several functions for use
     Accepts html text and returns JSoup data structures.
     e.g. (parse (slurp "http://www.google.com"))
 
-    (parseup)  
+    (parsup)  
     Accepts html text and returns Hiccup data structures.
     e.g. (parseup (slurp "http://www.google.com")) 
 
