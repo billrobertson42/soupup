@@ -41,7 +41,7 @@
 (deftest comment-test
   (testing "conversion of comment nodes"
     (is (= "<!-- a comment -->" (soupup (-> (single comment-node) child))))
-))
+    ))
 
 (deftest element-soupup-test
   (testing "element to soupup translation"
@@ -50,6 +50,14 @@
     (is (= [:p "Something"] (soupup (single <p>))))
     (is (= [:div [:p "p1"]] (soupup (single <div1>))))
     (is (= [:div (seq [[:p "p1"] [:p "p2"]])] (soupup (single <div2>))))
+    ))
+
+(deftest datanode-test
+  (testing "<script> & style data are special in jsoup"
     (is (= "js.alert('zomg')" (soupup (single <script> "script"))))
     ))
 
+(deftest document-test
+  (testing "ignore the document element"
+    (is (= :html (first (soupup (Jsoup/parse <p>)))))
+    ))

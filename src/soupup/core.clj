@@ -1,5 +1,6 @@
 (ns soupup.core
-  (:import [org.jsoup.nodes Attribute Comment DataNode Element Node TextNode]))
+  (:import [org.jsoup.nodes Attribute Comment DataNode Document Element Node 
+            TextNode]))
 
 (declare child-content)
 
@@ -32,6 +33,10 @@
   TextNode
   (soupup [^TextNode tn]
     (.text tn))
+
+  Document
+  (soupup [^Document doc]
+    (soupup (.childNode doc 0)))
 
   DataNode
   (soupup [^DataNode dn]
