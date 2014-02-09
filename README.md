@@ -11,32 +11,33 @@ and fragment) and select methods.
 soupup.core contains several functions for use
 
     (parse)    
-    accepts html text and returns JSoup data structures
+    Accepts html text and returns JSoup data structures.
     e.g. (parse (slurp "http://www.google.com"))
 
     (parseup)  
-    accepts html text and returns Hiccup data structures
-    e.g. (parse (slurp "http://www.google.com")) 
+    Accepts html text and returns Hiccup data structures.
+    e.g. (parseup (slurp "http://www.google.com")) 
 
     (frag)
-    accepts html fragment text and returns JSoup data structures
+    Accepts html fragment text and returns JSoup data structures.
     e.g. (frag "<p>Hello World</p>")
 
     (fragup)
-    accepts html fragment text and returns Hiccup data structures
+    Accepts html fragment text and returns Hiccup data structures.
+    e.g. (fragup "<p>Hello World</p>")
 
     (select)   
     Accepts a JSoup data structure and a css selector and returns Jsoup
-    data structures
+    data structures.
     e.g. (select (parse (slurp "http://www.google.com")) "img")
 
     (selectup) 
     Accepts a JSoup data structure and a css selector and returns Hiccup
-    data structures
+    data structures.
     e.g. (selectup (parse (slurp "http://www.google.com")) "img")
 
     (soupup)   
-    Convert JSoup data structures to Hiccup
+    Convert JSoup data structures to Hiccup data structures.
 
 At the time of this writing, 
 
@@ -57,7 +58,7 @@ Running this back through Hiccup's html function yields the following.
 
     <img alt="Google" height="95" id="hplogo" onload="window.lol&amp;&amp;lol()" src="/images/srpr/logo9w.png" style="padding:28px 0 14px" width="269" />
 
-See here information on Jsoup's [css selectors] (http://jsoup.org/cookbook/extracting-data/selector-syntax).
+See [here] (http://jsoup.org/cookbook/extracting-data/selector-syntax) information on Jsoup's css selectors.
 
 ## Running the Tests
 
