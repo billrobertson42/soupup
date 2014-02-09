@@ -60,4 +60,12 @@
 (deftest document-test
   (testing "ignore the document element"
     (is (= :html (first (soupup (Jsoup/parse <p>)))))
+    (is (instance? org.jsoup.nodes.Document (parse <p>)))
+    (is (= :html (first (parsup <p>))))
+    ))
+
+(deftest select-test
+  (testing "selecting things n' stuff"
+    (is (instance? org.jsoup.select.Elements (select (parse <p>) "p")))
+    (is (= :p (-> (selectup (parse <p>) "p") first first)))
     ))

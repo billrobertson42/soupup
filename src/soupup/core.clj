@@ -1,6 +1,8 @@
 (ns soupup.core
-  (:import [org.jsoup.nodes Attribute Comment DataNode Document Element Node 
-            TextNode]))
+  (:import [org.jsoup Jsoup]
+           [org.jsoup.nodes Attribute Comment DataNode Document Element Node 
+            TextNode]
+           [org.jsoup.select Elements]))
 
 (declare child-content)
 
@@ -34,6 +36,10 @@
   (soupup [^TextNode tn]
     (.text tn))
 
+  Elements
+  (soupup [^Elements el]
+    (if (> (.size el) 0) (map soupup el)))
+
   Document
   (soupup [^Document doc]
     (soupup (.childNode doc 0)))
@@ -56,3 +62,19 @@
     (soupup (.childNode node 0))
     (if-let [children (children-seq node)]
       (map soupup children))))
+
+(defn parse [^String html-text]
+  "Shorcut for Jsoup/parse -> produses a Jsoup document"
+  (Jsoup/parse html-text))
+
+(defn parsup [^String html-text]
+  "parse and convert"
+  (soupup (parse html-text)))
+
+(defn select [^Node node ^String css-selector]
+  "Shortcut for (.select node css-selector), returns a Jsoup ElementList"
+  (.select node css-selector))
+
+(defn selectup [^Node node ^String css-selector]
+  "Call select and convert, returns a lazy seq"
+  (soupup (select node css-selector)))
