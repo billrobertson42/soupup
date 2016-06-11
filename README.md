@@ -6,6 +6,10 @@ produce [Hiccup] (https://github.com/weavejester/hiccup) data structures.
 Also provides convenience functions for Jsoup's parse (full document
 and fragment) and select methods.
 
+## Include in your project
+
+    [soupup "0.1.1"]
+
 ## Usage
 
 soupup.core contains several functions for use
