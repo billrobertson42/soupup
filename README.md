@@ -62,7 +62,7 @@ Running this back through Hiccup's html function yields the following.
 
     <img alt="Google" height="95" id="hplogo" onload="window.lol&amp;&amp;lol()" src="/images/srpr/logo9w.png" style="padding:28px 0 14px" width="269" />
 
-See [here] (http://jsoup.org/cookbook/extracting-data/selector-syntax) information on Jsoup's css selectors.
+See [here](http://jsoup.org/cookbook/extracting-data/selector-syntax) information on Jsoup's css selectors.
 
 ## Running the Tests
 
