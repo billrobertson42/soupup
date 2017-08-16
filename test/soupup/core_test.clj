@@ -29,8 +29,7 @@
     (is (= {:href "http://example.com"}
            (attr-map (single <a1>))))
     (is (= {:href "http://example.com" :class "foo"}
-           (attr-map (single <a2>))))
-                                               
+           (attr-map (single <a2>))))                                               
     ))
 
 (deftest text-test
@@ -75,4 +74,16 @@
     (is (instance? org.jsoup.select.Elements (select (parse <p>) "p")))
     (is (= :p (-> (selectup (parse <p>) "p") first first)))
     ))
+
+(deftest doctypes
+  (let [page "<html><head></head><body><p>hi</p></body></html>"
+        dt-page (str "<!doctype html>" page)]
+    (testing "without doctype"
+      (is (= (parsup page) 
+             [:html [[:head] [:body [:p "hi"]]]])))
+    (testing "with doctype"
+      (is (= (parsup dt-page)
+             [[:!doctype {:name "html", :publicId "", :systemId ""}]
+              [:html [[:head] [:body [:p "hi"]]]]])))))
+
 
