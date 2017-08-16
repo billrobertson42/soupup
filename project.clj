@@ -1,9 +1,8 @@
-(defproject soupup "0.1.1"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+(defproject soupup "0.1.2"
+  :description "Thin Clojure wrapper for JSoup, translate to hiccup data structures or easy access to JSoup objects."
+  :url "https://github.com/billrobertson42/soupup"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.jsoup/jsoup "1.9.2"]]
-  :profiles {:dev {:dependencies [[hiccup "1.0.5"]]}}
-)
+                 [org.jsoup/jsoup "1.10.3"]])
+
