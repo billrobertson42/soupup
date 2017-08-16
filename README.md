@@ -1,12 +1,19 @@
 # soupup
 
-A Clojure library designed to utilize [JSoup] (http://jsoup.org) to
-produce [Hiccup] (https://github.com/weavejester/hiccup) data structures.
+A Clojure library designed to utilize [JSoup](http://jsoup.org) to
+produce [Hiccup](https://github.com/weavejester/hiccup) data structures.
 
-Also provides convenience functions for Jsoup's parse (full document
-and fragment) and select methods.
+It also provides direct access to the underlying JSoup objects in
+case you find those more convenient.
+
+Finally it provides convenience functions for JSoup's parse (full 
+document and fragment) and select methods. Both Hiccup and JSoup
+object versions are provided.
 
 ## Include in your project
+
+JSoup is hosted in Clojars, so if you're using Leiningen, just
+add the dependency to your project.clj file.
 
     [soupup "0.1.2"]
 
