@@ -63,15 +63,14 @@ At the time of this writing,
 
 returned the following...
 
-([:img#hplogo
-  {:alt "Gloria E. Anzalda’s 75th Birthday",
-   :border "0",
-   :height "200",
-   :src
-   "/logos/doodles/2017/gloria-e-anzalduas-75th-birthday-6115361035386880-l.png",
-   :title "Gloria E. Anzalda’s 75th Birthday",
-   :width "500",
-   :onload "window.lol&&lol()"}])
+    ([:img#hplogo
+      {:alt "Gloria E. Anzalda’s 75th Birthday",
+       :border "0",
+       :height "200",
+       :src "/logos/doodles/2017/gloria-e-anzalduas-75th-birthday-6115361035386880-l.png",
+       :title "Gloria E. Anzalda’s 75th Birthday",
+       :width "500",
+       :onload "window.lol&&lol()"}])
 
 Running this back through Hiccup's html function yields the following.
 
